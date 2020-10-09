@@ -1,0 +1,687 @@
+body{
+	margin: 0;
+	box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 350;
+  background-color: black;
+}
+
+
+/*for navigation bar*/
+header{
+	height: 50px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	padding: 8px 0px 6px 40px;
+}
+/*for navigation bar*/
+header h1{
+	display:inline;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 350;
+	font-size: 30px;
+	float: left;
+	margin-top: 0px;
+	margin-right: 30px;
+
+}
+/*for navigation bar*/
+nav ul{
+	display: inline;
+	padding: 0px;
+	float: left;
+}
+/*for navigation bar*/
+nav ul li{
+	display: inline-block;
+	color: white;
+	font-family: 
+	list-style-type: none;
+	float: left;
+	margin-left: 100px;
+
+}
+/*for navigation bar*/
+nav ul li a{
+	color: white;
+	text-decoration: none;
+}
+/*for navigation bar*/
+#tab{
+	font-family: 'Oswald', sans-serif;
+}
+/*for highlighting the current page*/
+.currentpage{
+	background-color: gold;
+	padding: 30px 50px 16px 50px;
+}
+/*attrib for other pages*/
+.otherpage:hover{
+	color: gold;
+	
+}
+/*for divider bar*/
+.divider{
+	background-color: gold;
+	height: 8px;
+}
+/*for home background image*/
+.bgimage{
+	background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/bg4.jpeg);	
+	background-size: 100% 100%;
+  width:100%;
+  min-height:300vh;
+  max-height:auto;
+  margin:0;
+  padding:0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
+}
+
+
+/*start for card flip*/
+.middle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25px;
+}
+.card{
+  cursor: pointer;
+  width: 340px;
+  height: 480px;
+  border-radius: 25px;
+}
+.front,.back{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform .6s linear;
+  border-radius: 25px;
+}
+.front img{
+  height: 100%;
+}
+.front{
+  transform: perspective(600px) rotateY(0deg);
+}
+.back{
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6)),url(images/backcover.jpg);
+  background-size: 100% 100%;
+  width:100%;
+  border-radius: 25px;
+  transform: perspective(600px) rotateY(180deg);
+}
+.back-content{
+  color: #ebe9e7;
+  text-align: center;
+  width: 100%;  
+}
+
+/*for social media*/
+.sm{
+  margin: 20px 0;
+}
+.sm a{
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  transition: 0.4s;
+  border-radius: 50%
+}
+.sm a:hover{
+  background: #2c3e50;
+  color: gold;
+}
+.card:hover > .front{
+  transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover > .back{
+  transform: perspective(600px) rotateY(0deg);
+}
+/*=============end of card flip================*/
+
+/*for pic layout*/
+.picborder{
+	height: 71%;
+	width: 27%;
+  top: 14%;
+	left: 36.5%;
+	position: absolute;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+/*for text layout*/
+.textborder{
+  align-self: center;
+	width: 60%;
+	top: 100%;
+	left: 18%;
+	position: absolute;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	padding-left:30px;
+  padding-top:30px;
+}  
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background-color: rgba(255,255,255,0.7);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;  
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: -6px;
+  background-color: rgba(0,0,0,1);
+  border: 4px groove gold;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: -14%;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 19px;
+  width: 0;
+  z-index: 1;
+  right: 25px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 14px;
+  width: 0;
+  z-index: 1;
+  left: 25px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -13px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: rgba(0,0,0,0.8);
+  position: relative;
+  border-radius: 6px;
+  border-style: groove;
+  border-width: 2px;
+  border-color: gold;
+
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 0px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+/*for skills portion*/
+.skills{
+  height: 10%;
+  width: 25%;
+  top: 86%;
+  left: 36.5%;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  padding-left:30px;
+ 
+}
+.skills a{
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 20px;
+  transition: 0.4s;
+  border-radius: 50%
+}
+.skills a:hover{
+  background: #2c3e50;
+  color: gold;
+}
+
+/*======================scroll down arrow=======================*/
+
+.containerarrowleft {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top:85%;
+  left:10%;
+}
+.containerarrowright{
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top:85%;
+  left:90%;
+
+}
+
+.arrow {
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s 
+  -out infinite;
+}
+
+.arrow:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.arrow:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.arrow:before,
+.arrow:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: #fff;
+}
+
+.arrow:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.arrow:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+.text {
+  display: block;
+  margin-top: 75px;
+  margin-left: -30px;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: .25;
+  animation: pulse 2s linear alternate infinite;
+}
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
+}
+/*======================================================================*/
+
+/*avatar pic of flipper*/
+.avatar {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/*======================================FOR BLOG===========================================*/
+.blogbg{
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/blog.jpeg);  
+  background-size: 100% 100%;
+  width:100%;
+  min-height:100vh;
+  max-height:auto;
+  margin:0;
+  padding:0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.btentry{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 350;
+  text-transform: uppercase;
+  font-size: 50px;  
+}
+}
+
+
+/* Header/Blog Title */
+
+
+.bleftcolumn {
+    flex: 75%;
+    position: absolute;
+    padding:100px;
+    
+}
+
+.brightcolumn {
+    flex: 25%;
+    padding-left: 50px;
+}
+
+/* Fake image */
+.bfakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 0px;
+}
+
+/* Add a card effect for articles */
+.cardleft {
+     background-color: rgba(255,255,255,0.4);
+     padding: 20px;
+     margin-top: 60px;
+     width:600px;
+     color:black;
+     
+}
+.cardright {
+     background-color: rgba(255,255,255,0.4);
+     padding: 20px;
+     margin-top: 60px;
+     width:50%;
+}
+
+.row {
+    display: flex;
+}
+
+
+
+/*=============================For Gallery====================*/
+.gallerybg{
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/photo.jpeg);  
+  background-size: 100% 100%;
+  width:100%;
+  min-height:100vh;
+  max-height:auto;
+  margin:0;
+  padding:0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+.galleryfull{
+  width: 100%;
+  padding: 50px 0px;
+
+}
+
+.inner-gallery{
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.galleryfull h1{
+  text-align: center;
+  text-transform: uppercase;
+  color:white;
+  font-family:cursive;
+}
+
+.border{
+  width: 100%;
+  height: 4px;
+  background: gold;
+  margin: 60px auto;
+}
+
+.galleryfull .gallery{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+
+}
+
+.galleryfull .image{
+  flex: 25%;
+  overflow: hidden;
+  cursor: pointer;
+  size: cover;
+
+}
+
+.galleryfull .image img{
+  width: 100%;
+  height: 50vh;
+  transition: 0.4s;
+  object-fit: cover;  
+}
+
+.galleryfull .image:hover img{
+  transform: scale(1.4) rotate(0deg);
+}
+/*===========================================================*/
+/*==========================FOR RESEARCH PAGE=======================*/
+.researchbgimage{
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6)),url(images/research1.jpeg);  
+  background-size: 100% 100%;
+  width:100%;
+  min-height:100vh;
+  max-height:auto;
+  margin:0;
+  padding:0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
+}
+.researchentry{
+  align-self: left;
+  height: auto;
+  width: 80%;
+  padding: 10px 50px 20px 50px;
+  margin: 80px auto; 
+  background-color: rgba(255,255,255,0.5);
+  color: white;
+  border: 3px solid gold;
+}  
+
+/*====================================for Contact===========================*/
+ /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+input[type=email], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: gold;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight:bold;
+  text-transform: uppercase;
+  margin-top:-12px;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: orange;
+}
+/* Style the submit button with a specific background color etc */
+button[type=date] {
+  background-color: gold;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight:bold;
+  text-transform: uppercase;
+  margin-top:-12px;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+button[type=date]:hover {
+  background-color: orange;
+}
+/* Add a background color and some padding around the form */
+.contactbox {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  border-style: groove;
+  border-width: 5px;
+  border-color: gold;
+  background-color: rgba(255,255,255,0.8);
+  padding: 20px;
+  height: 500px;
+  width: 500px;
+  margin-top: 60px;
+} 
+.contactbgimage{
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6)),url(images/contact.jpeg);  
+  background-size: 100% 100%;
+  width:100%;
+  min-height:100vh;
+  max-height:auto;
+  margin:0;
+  padding:0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+/*================================================*/
+.footer{
+  background-color: black;
+  width:100%;
+  color:white;
+  text-align: center;
+}

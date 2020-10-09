@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Shashwot Shakya | Portfolio</title>
+		<link rel="stylesheet" type="text/css" href="style.css"><!--importing Style sheet CSS-->
+		<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet"><!--importing fonts -->
+	</head>
+	<body>
+		<div class="contactbgimage"><!--for background image -->
+			<header>
+				<nav>
+					<h1>Shashwot Shakya</h1>
+					<ul id="tab">
+						<li><a class="otherpage" href="home.html">Home</a></li>
+						<li><a class="otherpage" href="blog.html">Blog</a></li>
+						<li><a class="otherpage" href="research.html">Research</a></li>
+						<li><a class="currentpage" href="#">Contact</a></li>
+						<li><a class="otherpage" href="gallery.html">Gallery</a></li>
+					</ul>
+
+				</nav>
+			</header>
+			<div class="divider"></div><!--for bar below navigation -->
+			<div class="contactbox"><!--for contact box-->
+  				<form name="contact" action="#">
+    				<label for="fname">First Name</label>
+    				<input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    				<label for="lname">Last Name</label>
+    				<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    				<label for="mail">E-Mail</label>
+	    			<input type="email" id="mail" name="mail" placeholder="Your E-Mail....">
+	    			<label for="subject">Subject</label>
+    				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    			<input type="submit" value="Submit" onclick="ValidateEmail(document.contact.mail)"><!--for form validation-->
+
+  				</form>
+			</div> 
+		
+			
+			
+		</div>
+		<footer>
+			<div class="footer">
+			Copyright © Shashwot Shakya. 2019 • All rights reserved.
+			</div>
+		</footer>
+		<script src="validation.js"></script><!--importing javascript -->			 
+	</body>
+</html>

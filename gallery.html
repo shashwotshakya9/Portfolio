@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Shashwot Shakya | Gallery</title>
+		<link rel="stylesheet" type="text/css" href="style.css"><!--importing stylesheet css-->
+		<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet"><!--importing fonts -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!--importing JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script><!--importing Popup Jquery-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"><!--importing Popup Jquery-->
+	  <style>/*css part for selective font color in this page only*/
+      .ttl{
+        color:gold;font-size: 24px;
+      }
+    </style>
+    </head>
+	<body>
+		<div class="gallerybg"><!--for gallery background -->
+		<header>
+			<nav>
+				<h1>Shashwot Shakya</h1>
+				<ul id="tab">
+					<li><a class="otherpage" href="home.html">Home</a></li>
+					<li><a class="otherpage" href="blog.html">Blog</a></li>
+					<li><a class="otherpage" href="research.html">Research</a></li>
+					<li><a class="otherpage" href="contact.html">Contact</a></li>
+					<li><a class="currentpage" href="#">Gallery</a></li>
+				</ul>
+
+			</nav>
+		</header>
+		<div class="divider"></div><!--for bar below navigation bar -->	
+		<div class="galleryfull"><!--for the gallery section -->
+        <div class="inner-gallery"><!--for the photo section of the gallery -->
+        <h1>My Gallery</h1>
+        <div class="border"></div><!--for border above the gallery -->
+        <div class="gallery"><!--for images of the gallery -->
+
+          <a href="images/pic1.jpg" class="image">
+            <img src="images/pic1.jpg" height="20px">
+          </a>
+
+          <a href="images/pic2.jpg" class="image">
+            <img src="images/pic2.jpg" alt="">
+          </a>
+
+          <a href="images/pic3.jpeg" class="image">
+            <img src="images/pic3.jpeg" alt="">
+          </a>
+
+          <a href="images/pic4.jpg" class="image">
+            <img src="images/pic4.jpg" alt="">
+          </a>
+
+          <a href="images/pic5.jpg" class="image">
+            <img src="images/pic5.jpg" alt="">
+          </a>
+
+          <a href="images/pic6.jpg" class="image">
+            <img src="images/pic6.jpg" alt="">
+          </a>
+
+          <a href="images/pic7.jpg" class="image">
+            <img src="images/pic7.jpg" alt="">
+          </a>
+
+          <a href="images/pic8.jpeg" class="image">
+            <img src="images/pic8.jpeg" alt="">
+          </a>
+
+        </div>
+        </div>
+        </div>
+        <script>/*for the click effect of the pictures in the gallery*/
+        $(".gallery").magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery:{
+           enabled: true
+          }
+        });
+        </script>
+
+			
+			
+	    </div>
+		<footer>
+            <div class="footer"><!--footer section-->
+            Copyright © Shashwot Shakya. 2019 • All rights reserved.
+            </div>
+        </footer>
+		 
+	</body>
+</html>
